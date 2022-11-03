@@ -66,8 +66,22 @@ class MyCoponent extends React.Component {
             this.handleOnSubmit(event);
           }}
         >
-          <input id="name" type="text" placeholder="Enter your name" />
-          <input id="age" type="text" placeholder="Enter your age" />
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            onChange={(event) => {
+              this.handleOnChangeName(event);
+            }}
+          />
+          <input
+            id="age"
+            type="text"
+            placeholder="Enter your age"
+            onChange={(event) => {
+              this.handleOnChangAge(event);
+            }}
+          />
           <button>Submit</button>
         </form>
       </div>
