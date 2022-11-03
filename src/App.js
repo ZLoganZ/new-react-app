@@ -2,7 +2,7 @@
 import "./App.css";
 import MyCoponent from "./components/MyComponent";
 
-function App() {
+const App = () => {
   return (
     // <div className="App">
     //   <header className="App-header">
@@ -25,6 +25,6 @@ function App() {
       <MyCoponent />
     </div>
   );
-}
+};
 
 export default App;
