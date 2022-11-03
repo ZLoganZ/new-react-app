@@ -17,14 +17,22 @@ class MyCoponent extends React.Component {
     });
   };
 
+  handleDeleteUser = (id) => {
+    this.setState({
+      listUsers: this.state.listUsers.filter((user) => user.id !== id),
+    });
+  };
+
   render() {
     return (
-      <div>
+      <>
         <AddUserInfo handleAddNewUser={this.handleAddNewUser} />
         <br />
-        <br />
-        <DisplayInfo listUsers={this.state.listUsers} />
-      </div>
+        <DisplayInfo
+          listUsers={this.state.listUsers}
+          handleDeleteUser={this.handleDeleteUser}
+        />
+      </>
     );
   }
 }

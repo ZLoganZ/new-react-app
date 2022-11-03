@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import "./main.scss";
-import logo from "./../logo.svg";
+//import logo from "./../logo.svg";
 
 class DisplayInfo extends React.Component {
   state = {
@@ -16,7 +16,7 @@ class DisplayInfo extends React.Component {
     const { listUsers } = this.props;
     return (
       <div className="display-infor-container">
-        <img src={logo} />
+        {/* <img src={logo} /> */}
         <div>
           <button
             onClick={() => {
@@ -27,17 +27,22 @@ class DisplayInfo extends React.Component {
           </button>
         </div>
         {this.state.isShowed && (
-          <div>
+          <>
             {listUsers.map((user) => {
               return (
                 <div key={user.id} className={user.age > 20 ? "green" : "red"}>
-                  <h1>
+                  <p>
                     My name is {user.name} and I am {user.age}
-                  </h1>
+                    <button
+                      onClick={() => this.props.handleDeleteUser(user.id)}
+                    >
+                      Delete
+                    </button>
+                  </p>
                 </div>
               );
             })}
-          </div>
+          </>
         )}
       </div>
     );
