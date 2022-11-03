@@ -26,7 +26,7 @@ class AddUserInfo extends React.Component {
       age: document.getElementById("age").value,
     });
     this.props.handleAddNewUser({
-      id: Math.random(),
+      id: {},
       name: this.state.name,
       age: this.state.age,
     });
