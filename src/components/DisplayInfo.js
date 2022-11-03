@@ -19,7 +19,7 @@ class DisplayInfo extends React.Component {
               this.handleShowHide();
             }}
           >
-            {this.state.isShowed ? "Hide" : "Show"}
+            {this.state.isShowed ? "Hide list" : "Show list"}
           </button>
         </div>
         {this.state.isShowed && (
