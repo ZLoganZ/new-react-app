@@ -27,6 +27,27 @@ class MyCoponent extends React.Component {
     });
   };
 
+  handleOnChangeName = (event) => {
+    this.setState({
+      name: event.target.value,
+    });
+  };
+
+  handleOnChangAge = (event) => {
+    this.setState({
+      age: event.target.value,
+    });
+  };
+
+  handleOnSubmit = (event) => {
+    event.preventDefault();
+    console.log("Form submitted");
+    this.setState({
+      name: document.getElementById("name").value,
+      age: document.getElementById("age").value,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -40,16 +61,29 @@ class MyCoponent extends React.Component {
         >
           Click Me
         </button>
-        <button
-          onMouseOver={(event) => {
-            this.handleOnMouseOver(event);
-          }}
-          onMouseOut={() => {
-            this.handleOnMouseOut();
+        <form
+          onSubmit={(event) => {
+            this.handleOnSubmit(event);
           }}
         >
-          Hover Me
-        </button>
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            onChange={(event) => {
+              this.handleOnChangeName(event);
+            }}
+          />
+          <input
+            id="age"
+            type="text"
+            placeholder="Enter your age"
+            onChange={(event) => {
+              this.handleOnChangAge(event);
+            }}
+          />
+          <button>Submit</button>
+        </form>
       </div>
     );
   }
