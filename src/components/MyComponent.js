@@ -33,10 +33,20 @@ class MyCoponent extends React.Component {
         <h1>
           My name is {this.state.name} and I am {this.state.age}
         </h1>
-        <button onClick={this.handleClick}>Click Me</button>
         <button
-          onMouseOver={this.handleOnMouseOver}
-          onMouseOut={this.handleOnMouseOut}
+          onClick={() => {
+            this.handleClick();
+          }}
+        >
+          Click Me
+        </button>
+        <button
+          onMouseOver={(event) => {
+            this.handleOnMouseOver(event);
+          }}
+          onMouseOut={() => {
+            this.handleOnMouseOut();
+          }}
         >
           Hover Me
         </button>
